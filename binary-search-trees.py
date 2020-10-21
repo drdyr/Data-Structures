@@ -26,3 +26,17 @@ class Tree:
                 self._insert(value, node.right)
             else:
                 node.right = Node(value)
+
+    def check(self, value):
+        trav = self.root
+
+        while trav:
+            if trav.value == value:
+                return True
+            if value <= trav.value:
+                trav = trav.left
+            else:
+                trav = trav.right
+
+        return False
+
